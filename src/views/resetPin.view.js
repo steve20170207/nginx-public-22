@@ -19,7 +19,7 @@ function resetPin$ctrl (
     this.token = $stateParams.token || ''
     this.isTokenValid = true
 
-    if (!!$stateParams.lang && $stateParams.lang === 'FR') $translate.use('fr')
+    if (!!$stateParams.lang && $stateParams.lang.toLowerCase() === 'fr') $translate.use('fr')
     if ($stateParams.relationship) this.submitterInfo.relationshipToPatient = $stateParams.relationship
 
     Endpoint.ValidateToken(this.token)

@@ -768,46 +768,89 @@ padding-left: 0px;
      vertical-align:top;
    }
 
-   .padding{
-     padding-left: 11%;
-     line-height: 22px;
-   }
-
-  .tableCell{
-    vertical-align:top;
-    border-right: solid thin #cccccc ;
-    padding: 9px;
-   }
-
-   .middle {
-     border-right: solid thin #cccccc ;
-     text-align: center;
-   }
-
-   .check {
-     background-color: #BBBBBB;
-   }
-
-   h5 {
+   .ontario-schedule-frame {
      margin: 0px;
-     padding: 9px;
    }
-
-   table td:first-child {
-     border-left: none;
+   .ontario-schedule {
+     display: table;
+     border-radius: 6px;
+     font-size: 17px;
+     overflow: hidden;
    }
-
-   table td:last-child {
+   .age-blocks {
+     display: table;
+     table-layout: fixed;
+     width: 100%;
+     background: #eee;
+   }
+   .age-group {
+     display: table-cell;
+     width: 200px;
+     border-right: 1px solid #bababa;
+     padding-bottom: 20px;
+   }
+   .age-group:last-of-type {
+     border-right: none;
+   }
+   .age-title {
+     background: #dcdcdc;
+     padding: 12px 12px 12px 32px;
+     margin: 0;
+     font-size: 1.176em;
+     font-weight: bold;
+     color: #262626;
+   }
+   .recurring .age-title {
+     background: #bbb;
+   }
+   .imm-title,
+   .recur-note {
+     margin: 14px 12px 0 32px;
+     font-weight: bold;
+   }
+   .icon-width-22 {
+     font-size: 14px;
+     line-height: 28px;
+     font-weight: normal;
+     display: block;
+     float: left;
+     margin-left: -22px;
+     width: 22px;
+   }
+   .imm-disease {
+     margin: 0 12px 0 32px;
+     font-size: .882em;
+     line-height: 1.333;
+     color: #666;
+   }
+   .schedule-footer {
+     display: table-row;
+     background: #dcdcdc;
+   }
+   .schedule-footer p {
+     padding: 16px;
+     margin: 0;
+     font-size: .882em;
+     line-height: 1.333;
+   }
+   
+   /* vertical layout */
+   .vertical .ontario-schedule,
+   .vertical .age-blocks,
+   .vertical .age-group,
+   .vertical .schedule-footer {
+     display: block;
+     width: auto;
+   }
+   .ontario-schedule-frame.vertical {
+     width: 266px;
+     height: 600px;
+     margin: 10px auto 40px;
+   }
+   .vertical .age-group {
      border-right: none;
    }
 
-   /*tr:nth-child(even) {
-     background: rgba(237, 237, 237, 0.69);
-   }*/
-
-   tr:nth-child(odd) {
-     background: #e0e0e0;
-   }
    /* Ontario immunization schedule table. */
 
    .uib-left:before {

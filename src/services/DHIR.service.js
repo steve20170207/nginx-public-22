@@ -1,14 +1,22 @@
-/*
- * A collection of DHIR response profiles with a matcher function, and an ID.
- * DHIR response profile matchers check the attributes in DHIR responses which
- * indicate conditions that the ICON front-end application should respond to.
- * For technical details on DHIR responses, please refer to:
- *    - "Panorama ICON Public FHIR Implementation Guide" (v2.0.2), and
- *    - "DHIR Administration API - Logical Application Design Document" (v1.1)
- */
 /* @ngInject */
 function DHIR (Is) {
-/* Universal DHIR response profiles (private) *********************************/
+  /** Factory for enums whose keys and values both match the keys of the parent.
+   * @param {object} parent - the object to strip keys from
+   * @returns {object} - an enum with matching key value pairs */
+  const KeysAsEnum = (parent) => Object.keys(parent)
+          .reduce((enumParent, key) => {
+            if (key) enumParent[key] = key
+            return enumParent
+          }, {})
+
+  /** Factory to inject IDs matching key names for all child properties of a parent.
+   * @param {object} parent - the object to strip keys from
+   * @returns {object} - an enum with matching key value pairs */
+  const KeysAppendedAsIds = (parent) => Object.keys(parent)
+          .reduce((idParent, key) => {
+            idParent[key].id = key
+            return idParent
+          }, parent)
 
   /* These responses are general, reused across almost all of the APIs. */
   const UNIVERSAL_DHIR_RESPONSES = {
@@ -317,30 +325,6 @@ function DHIR (Is) {
       })
     }
   }
-
-/* Utilities (jsut to DRY up code and avoid typos, private) *******************/
-
-    /**
-     * Factory for enums whose keys and values both match the keys of the parent.
-     * @param {object} parent - the object to strip keys from
-     * @returns {object} - an enum with matching key value pairs
-     */
-  const KeysAsEnum = (parent) => Object.keys(parent)
-          .reduce((enumParent, key) => {
-            if (key) enumParent[key] = key
-            return enumParent
-          }, {})
-
-    /**
-     * Factory to inject IDs matching key names for all child properties of a parent.
-     * @param {object} parent - the object to strip keys from
-     * @returns {object} - an enum with matching key value pairs
-     */
-  const KeysAppendedAsIds = (parent) => Object.keys(parent)
-          .reduce((idParent, key) => {
-            idParent[key].id = key
-            return idParent
-          }, parent)
 
 /* Public *********************************************************************/
 

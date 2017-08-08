@@ -1,7 +1,9 @@
 /* @ngInject */
 function oiidStatus$ctrl (
+  $analytics,
   $state,
   $stateParams,
+  AnalyticsLogger,
   DhirErrorHandler,
   Endpoint,
   ImmunizationRecordService,
@@ -62,7 +64,15 @@ function oiidStatus$ctrl (
             break
 
           case DHIR.error.ClientStatus.OIID_PIN_REVOKED_AGE:
+            $analytics.eventTrack(AnalyticsLogger.eventAction.REVOKED_AGE)
+            Notify.publish(ICON_NOTIFICATION.INFO_CALL_PHU_GENERIC)
+            break
+
           case DHIR.error.ClientStatus.OIID_PIN_REVOKED_PHU:
+            $analytics.eventTrack(AnalyticsLogger.eventAction.REVOKED_PHU)
+            Notify.publish(ICON_NOTIFICATION.INFO_CALL_PHU_GENERIC)
+            break
+
           case DHIR.error.ClientStatus.OIID_PIN_NOT_SET_NO_HCN:
           case DHIR.error.ClientStatus.OIID_PIN_OUTDATED_NO_HCN:
             Notify.publish(ICON_NOTIFICATION.INFO_CALL_PHU_GENERIC)

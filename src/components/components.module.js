@@ -89,6 +89,10 @@ import roleCapture from './form/roleCapture/roleCapture.component.js'
 import noHealthCardModal from './form/noHealthCardModal/noHealthCardModal.component.js'
 /* End Form imports */
 
+/* Ontario Immunization Schedule components */
+import ontarioImmunizationScheduleContent from './ontarioImmunizationScheduleContent/ontarioImmunizationScheduleContent.component.js'
+/* End Ontario Immunization Schedule components */
+
 /* Notification components */
 import notification from './notification/notification.component.js'
 import dismissableInfoNotification from './notification/dismissableInfoNotification.component.js'
@@ -187,6 +191,10 @@ MODULE.component(oiidStatus.name, oiidStatus.component)
   .component(roleCapture.name, roleCapture.component)
   .component(noHealthCardModal.name, noHealthCardModal.component)
 /* End Form components */
+
+/* Ontario Immunization Schedule components */
+  .component(ontarioImmunizationScheduleContent.name, ontarioImmunizationScheduleContent.component)
+/* End Ontario Immunization Schedule components */
 
 /* Notification components */
   .component(notification.name, notification.component)

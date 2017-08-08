@@ -6,31 +6,31 @@
 
   <!--  Street -->
   <div class="col-sm-8">
-    <span>{{$ctrl.addressInfo.unitNumber}}<span ng-if="$ctrl.addressInfo.unitNumber">-</span>{{$ctrl.addressInfo.streetNumber}}</span>
-    <span>{{$ctrl.addressInfo.streetName}} {{$ctrl.addressInfo.streetType}} {{$ctrl.addressInfo.streetDirection}}</span>
+    <span>{{ $ctrl.addressInfo.unitNumber }}<span ng-if="$ctrl.addressInfo.unitNumber">-</span>{{ $ctrl.addressInfo.streetNumber }}</span>
+    <span>{{ $ctrl.addressInfo.streetName }} {{ $ctrl.addressInfo.streetType }} {{ $ctrl.addressInfo.streetDirection }}</span>
   </div>
   <!-- End Street -->
 
   <!-- Rural Route -->
   <div class="col-sm-8">
-    <span ng-if="$ctrl.addressInfo.postBox!== ''">{{'addressPOBox.POBOX' | translate}} {{$ctrl.addressInfo.postBox}} </span>
-    <span ng-if="$ctrl.addressInfo.retailPostOffice!== ''">{{$ctrl.addressInfo.retailPostOffice}}</span>
-    <span ng-if="$ctrl.addressInfo.ruralRoute!== ''">{{'addressRural.RURAL_ROUTE' | translate}} {{$ctrl.addressInfo.ruralRoute}}</span>
-    <span ng-if="$ctrl.addressInfo.station!== ''">{{'addressRural.STATION_ROUTE' | translate}} {{$ctrl.addressInfo.station}}</span>
+    <span ng-if="$ctrl.addressInfo.postBox!== ''">{{ 'addressPOBox.POBOX' | translate }} {{ $ctrl.addressInfo.postBox }} </span>
+    <span ng-if="$ctrl.addressInfo.retailPostOffice!== ''">{{ 'addressDisplay.RPO' | translate }} {{ $ctrl.addressInfo.retailPostOffice }}</span>
+    <span ng-if="$ctrl.addressInfo.ruralRoute!== ''">{{ 'addressRural.RURAL_ROUTE' | translate }} {{ $ctrl.addressInfo.ruralRoute }}</span>
+    <span ng-if="$ctrl.addressInfo.station!== ''">{{ 'addressRural.STATION_ROUTE' | translate }} {{ $ctrl.addressInfo.station }}</span>
   </div>
   <div class="col-sm-8">
-    <span>{{$ctrl.addressInfo.line2}}</span>
+    <span>{{ $ctrl.addressInfo.line2 }}</span>
   </div>
   <!-- End Rural Route -->
 
 
   <div class="col-sm-8">
-    <span>{{$ctrl.addressInfo.city}}, </span>
-    <span>{{$ctrl.addressInfo.province}}</span>
+    <span>{{ $ctrl.addressInfo.city }}, </span>
+    <span>{{ $ctrl.addressInfo.province }}</span>
   </div>
 
   <div class="col-sm-8">
-    <span>{{$ctrl.addressInfo.postalCode}}</span>
+    <span>{{ $ctrl.addressInfo.postalCode }}</span>
   </div>
 </div>
 

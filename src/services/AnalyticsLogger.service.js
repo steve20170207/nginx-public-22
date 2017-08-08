@@ -1,19 +1,32 @@
 /* @ngInject */
-function AnalyticsLogger (Endpoint, TokenHandler) {
+function AnalyticsLogger (moment, Endpoint, TokenHandler) {
 /* Private ********************************************************************/
+
   const eventAction = {
     CHI_SURVEY: { chiSurvey: true },
     CONTACT_PHU: { contactPhu: true },
+    REVOKED_AGE: { revokedAge: true },
+    REVOKED_CONSENT: { revokedConsent: true },
+    REVOKED_PHU: { revokedPhu: true },
     SET_LANGUAGE_EN: { setLanguage: 'en' },
     SET_LANGUAGE_FR: { setLanguage: 'fr' }
   }
 
   let previousPageTrack = { detail: '', timestamp: 0 }
 
+  /** Factory for enums whose keys and values both match the keys of the parent.
+  * @param {object} parent - the object to strip keys from
+  * @returns {object} - an enum with matching key value pairs */
+  const KeysAsEnum = (parent) => Object.keys(parent)
+  .reduce((enumParent, key) => {
+    if (key) enumParent[key] = key
+    return enumParent
+  }, {})
+
   /** Calculates the duration spent on a page (route). @returns {boolean} */
   function calculatePageDuration (currentPageTrack, previousPageTrack) {
     return (previousPageTrack.timestamp)
-              ? currentPageTrack.timestamp - previousPageTrack.timestamp
+              ? (currentPageTrack.timestamp - previousPageTrack.timestamp)
               : 0
   }
 
@@ -48,14 +61,32 @@ function AnalyticsLogger (Endpoint, TokenHandler) {
     let currentPageTrack = { detail: detail, timestamp: Date.now() }
     let duration = calculatePageDuration(currentPageTrack, previousPageTrack)
 
-    // When the route logged is confiramtion, log transaction duration.
-    let isEndSubmissionPage = (detail.indexOf('confirmation') > -1)
+    // The time of the page track, in minutes
+    const timeOfDay = (moment().hour() * 60) + moment().minute()
+
+    // When the route logged is confiramtion, log transaction duration & time of day.
+    const isEndSubmissionPage = (detail.indexOf('confirmation') > -1)
     if (isEndSubmissionPage) {
       let transactionToken = TokenHandler.inspectTransactionToken()
 
       Endpoint.postAnalyticsLog({
-        transitionPage: `${detail}-transaction-duration-sum`,
-        duration: calculateTransactionDuration(transactionToken)
+        transitionPage: detail,
+        submissionDuration: calculateTransactionDuration(transactionToken),
+        timeOfDay: timeOfDay
+      })
+      .catch(angular.noop)
+    }
+
+    const retrievalRoutes = [
+      'auth/other/patient',
+      'auth/self/patient'
+    ]
+    // When the route logged is a retrieval route, log time of day.
+    const isRetrievalPage = retrievalRoutes.some(r => (detail.indexOf(r) > -1))
+    if (isRetrievalPage) {
+      Endpoint.postAnalyticsLog({
+        transitionPage: detail,
+        timeOfDay: timeOfDay
       })
       .catch(angular.noop)
     }
@@ -83,7 +114,8 @@ function AnalyticsLogger (Endpoint, TokenHandler) {
 
   return {
     handleEventTrack: handleEventTrack,
-    handlePageTrack: handlePageTrack
+    handlePageTrack: handlePageTrack,
+    eventAction: KeysAsEnum(eventAction)
   }
 }
 

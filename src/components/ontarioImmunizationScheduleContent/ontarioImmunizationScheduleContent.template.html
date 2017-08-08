@@ -1,0 +1,31 @@
+<div ng-class="$ctrl.getAlignmentClasses()"><!-- add 'vertical' to this class -->
+  <div class="ontario-schedule">
+    <div class="age-blocks">
+      <div ng-class="$ctrl.getHeaderClasses(schedule.scheduleDate.labelKey)"
+           ng-repeat="schedule in $ctrl.scheduledImmunizations"
+           tabindex="0"
+           role="gridcell">
+        <p class="age-title" translate="{{schedule.scheduleDate.labelKey}}" translate-compile></p>
+        <span class="sr-only">,</span><!-- add pause for screen reader -->
+        <span ng-repeat="disease in schedule.diseases">
+          <p class="imm-title">
+            <span ng-if="disease.agentName !== 'schedule.EVERY_FALL' && disease.agentName !== 'schedule.EVERY_10_YEARS'"
+                  class="fa fa-imm-vial icon-width-22">
+            </span>
+            <span ng-if="disease.agentName === 'schedule.EVERY_FALL' || disease.agentName === 'schedule.EVERY_10_YEARS'"
+                  class="fa fa-asterisk icon-width-22">
+            </span>
+            <span translate="{{disease.agentName}}" translate-compile></span>
+          </p>
+          <span class="sr-only">,</span><!-- add pause for screen reader -->
+          <p class="imm-disease" translate="{{ disease.diseaseList }}" translate-compile></p>
+          <span class="sr-only">,</span><!-- add pause for screen reader -->
+        </span>
+      </div>
+    </div>
+    <div class="schedule-footer">
+      <p translate='{{ schedule.IMMS_SCHEDULE_MESSAGE }}' translate-compile>
+      </p>
+    </div>
+  </div>
+</div>

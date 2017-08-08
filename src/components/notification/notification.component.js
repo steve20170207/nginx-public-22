@@ -1,8 +1,13 @@
 /* @ngInject */
 function notification$ctrl (
-  $timeout, $translate,
+  $analytics,
+  $timeout,
+  $translate,
   $uibModal,
-  Notify, SessionHandler, TokenHandler,
+  AnalyticsLogger,
+  Notify,
+  SessionHandler,
+  TokenHandler,
   ICON_NOTIFICATION
 ) {
   // NOTE: Each notification constant is categorized by the way it is presented to the user.
@@ -139,6 +144,11 @@ function notification$ctrl (
 
   let dismissableInfoNotificationModal = null
   let openDismissableInfoNotification = (notification) => {
+    // Log revocation due to consent block...
+    if (notification === ICON_NOTIFICATION.WARN_RETRIEVAL_CONSENT_BLOCK) {
+      $analytics.eventTrack(AnalyticsLogger.eventAction.REVOKED_CONSENT)
+    }
+
     let isNotificationTypeAlreadyOpen = (
          dismissableInfoNotificationModal &&
       dismissableInfoNotificationModal.notification === notification

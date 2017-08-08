@@ -8,13 +8,20 @@
 
 #icon-phu-header * { font-size: 17px; }
 
+#icon-phu-header-title {
+  width: 60%;
+}
+
 #icon-phu-header-title a {
   height: 56px;
   display: table-cell;
   vertical-align: middle;
 }
 
-#icon-phu-header-title * { font-weight: bold; }
+#icon-phu-header-title * {
+  text-align: left;
+  font-weight: bold;
+}
 
 #icon-translate-button a {
   height: 56px;
@@ -73,6 +80,7 @@ html, body { height: 100%; }
     display: table-cell;
     vertical-align: middle;
   }
+
   #icon-translate-button a {
     height: 72px;
     display: table-cell;

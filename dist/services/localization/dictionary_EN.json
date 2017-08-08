@@ -32,7 +32,8 @@
   },
   "addressDisplay": {
     "ADDRESS_TITLE": "Mailing Address",
-    "EDIT": "Edit"
+    "EDIT": "Edit",
+    "RPO": "RPO"
   },
   "addressPOBox": {
     "POBOX": "P.O. Box",
@@ -781,8 +782,8 @@
     "EVERY_10_YEARS": "Every 10 Years",
     "PNEU-P-23_VALUE": "Pneumococcal polysaccharide 23 <br aria-hidden=\"true\"> <strong>(65 years+)</strong>",
     "SHINGLES_VALUE": "Zoster <br aria-hidden=\"true\"> <strong>(65-70 years)</strong>",
-    "IMMS_SCHEDULE_MESSAGE": "Protection against the diseases in <em>italics</em> is required for school attendance under the immunization of School Pupils Act. Children born on or after January 1, 2010 also need to be immunized against Varicella.",
-    "IMMS_SCHEDULE_MESSAGE_ARIA": ", Protection against certain diseases is required for school attendance under the immunization of School Pupils Act. Children born on or after January 1, 2010 also need to be immunized against Varicella.",
+    "IMMS_SCHEDULE_MESSAGE": "Protection against the diseases in <em>italics</em> is required for school attendance under the Immunization of School Pupils Act. Children born on or after January 1, 2010 also need to be immunized against Varicella.",
+    "IMMS_SCHEDULE_MESSAGE_ARIA": ", Protection against certain diseases is required for school attendance under the Immunization of School Pupils Act. Children born on or after January 1, 2010 also need to be immunized against Varicella.",
     "DTAP-IPV-HIB": "DTaP-IPV-Hib",
     "PNEU-C": "Pneu-C",
     "ROTA-1": "Rota-1",
@@ -900,7 +901,7 @@
     "INTRO_LI_1": "It's an online alternative to paper immunization records.",
     "INTRO_LI_2": "It allows Ontarians to securely keep track of their families' immunization records.",
     "INTRO_LI_3": "It allows families to report their child's immunization records to their local public health unit, as required by the",
-    "INTRO_BULLET_1": "Immunization of Schools Pupil Act, 1990 (ISPA)",
+    "INTRO_BULLET_1": "Immunization of School Pupils Act, 1990 (ISPA)",
     "INTRO_BULLET_1_URL": "https://www.ontario.ca/laws/statute/90i01",
     "INTRO_IMMS_LAW3": " and the ",
     "INTRO_BULLET_2": "Child Care and Early Years Act, 2014 (CCEYA).",
@@ -938,7 +939,7 @@
   },
   "welcomeLogin": {
     "VIEW_BUTTON_TITLE": "View Immunizations",
-    "VIEW_BUTTON_PARA": "You can view current, overdue and upcoming immunizations e.g. Like your Yellow Card, only better.",
+    "VIEW_BUTTON_PARA": "You can view current, overdue and upcoming immunizations. Like your Yellow Card, only better.",
     "SUBMIT_BUTTON_TITLE": "Submit Immunizations",
     "SUBMIT_BUTTON_PARA": "Keep track of immunizations by reporting them to your Public Health Unit.",
     "AUTHENTICATION": "Enter an ID and PIN",
@@ -1117,13 +1118,13 @@
       "PHU_WEBSITE": "http://www.hpepublichealth.ca"
     },
     "HPH": {
-      "PHU_NAME": "Hamilton Public Health Services",
+      "PHU_NAME": "City of Hamilton Public Health Services",
       "PHU_PHONE": "905-540-5250",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
       "PHU_PHONE_2_EXT": "",
       "PHU_CONTACT_PERSON": "a Hamilton Public Health nurse",
-      "PHU_ADDRESS": "<strong>Privacy Officer</strong><br aria-hidden=\"true\" />Hamilton Public Health Services<br aria-hidden=\"true\" />110 King St. West, 2nd Floor<br aria-hidden=\"true\" />Hamilton, Ontario<br aria-hidden=\"true\" />L8P 4S6",
+      "PHU_ADDRESS": "<strong>Privacy Officer</strong><br aria-hidden=\"true\" />City of Hamilton Public Health Services<br aria-hidden=\"true\" />110 King St. West, 2nd Floor<br aria-hidden=\"true\" />Hamilton, Ontario<br aria-hidden=\"true\" />L8P 4S6",
       "PHU_RESPONSE_TIME": "5-7 business days",
       "PHU_TOC_LINK": "https://www.hamilton.ca/government-information/site-policies/terms-use",
       "PHU_WEBSITE": "https://www.hamilton.ca/public-health/health-topics/vaccines-and-immunization"
@@ -1255,7 +1256,7 @@
       "PHU_PHONE_2": "1-877-743-0101",
       "PHU_PHONE_2_EXT": "",
       "PHU_CONTACT_PERSON": "a Peterborough Public Health  nurse",
-      "PHU_ADDRESS":  "<strong>Assistant Director & Chief  Nursing Officer Jackson Square </strong><br aria-hidden=\"true\" />Peterborough Public Health<br aria-hidden=\"true\" />185 King Street<br aria-hidden=\"true\" />Peterborough, ON<br aria-hidden=\"true\" />K9J 2R8",
+      "PHU_ADDRESS":  "<strong>Assistant Director & Chief Nursing Officer </strong><br aria-hidden=\"true\" />Peterborough Public Health<br aria-hidden=\"true\" />Jackson Square-185 King Street<br aria-hidden=\"true\" />Peterborough, ON<br aria-hidden=\"true\" />K9J 2R8",
       "PHU_RESPONSE_TIME": "3 – 5 business days ",
       "PHU_TOC_LINK": "http://www.peterboroughpublichealth.ca/disclaimer/",
       "PHU_WEBSITE": "http://www.peterboroughpublichealth.ca/my-life-health/parents-caregivers/immunizations/how-to-update-your-childs-record/"
@@ -1282,7 +1283,7 @@
       "PHU_ADDRESS": "<strong>Medical Officer of Health</strong><br aria-hidden=\"true\" />Peel Public Health<br aria-hidden=\"true\" />P.O. Box 667 RPO Streetsville<br aria-hidden=\"true\" />Mississauga, Ontario<br aria-hidden=\"true\" />L5M 2C2",
       "PHU_RESPONSE_TIME": "5 Business Days",
       "PHU_TOC_LINK": "http://www.peelregion.ca/privacy/index.htm",
-      "PHU_WEBSITE": "https://www.peelregion.ca/immunize"
+      "PHU_WEBSITE": "https://www.peelregion.ca/health/"
     },
     "PO": {
       "PHU_NAME": "Porcupine Health Unit",
@@ -1323,7 +1324,7 @@
     "SDHU": {
       "PHU_NAME": "Sudbury & District Health Unit",
       "PHU_PHONE": "705-522-9200",
-      "PHU_PHONE_EXT": "",
+      "PHU_PHONE_EXT": "458",
       "PHU_PHONE_2": "1-866-522-9200",
       "PHU_PHONE_2_EXT": "",
       "PHU_CONTACT_PERSON": "a Sudbury & District Health Unit nurse",
@@ -1377,8 +1378,8 @@
       "PHU_CONTACT_PERSON": "a Toronto Public Health nurse",
       "PHU_ADDRESS": "<strong>Manager, Information Management</strong><br aria-hidden=\"true\" />Toronto Public Health<br aria-hidden=\"true\" />235 Danforth Avenue, 2nd floor<br aria-hidden=\"true\" />Toronto, Ontario<br aria-hidden=\"true\" />M4K 1N2",
       "PHU_RESPONSE_TIME": "3-5 business days",
-      "PHU_TOC_LINK": "http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=33fd5ce6dfb31410VgnVCM10000071d60f89RCRD&vgnextchannel=a253ba2ae8b1e310VgnVCM10000071d60f89RCRD&appInstanceName=default",
-      "PHU_WEBSITE": "http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=33fd5ce6dfb31410VgnVCM10000071d60f89RCRD&vgnextchannel=a253ba2ae8b1e310VgnVCM10000071d60f89RCRD&appInstanceName=default"
+      "PHU_TOC_LINK": "",
+      "PHU_WEBSITE": "https://www1.toronto.ca/wps/portal/contentonly?vgnextoid=492e355f429eb510VgnVCM10000071d60f89RCRD"
     },
     "WDGPH": {
       "PHU_NAME": "Wellington-Dufferin-Guelph Public Health",

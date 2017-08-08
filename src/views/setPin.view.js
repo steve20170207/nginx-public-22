@@ -102,6 +102,7 @@ function setPinController (
 
           default:
             Notify.publish(ICON_NOTIFICATION.WARN_GENERAL_SERVER_ERROR)
+            Notify.publish(ICON_NOTIFICATION.POP_RETRIEVAL_PROGRESS)
             break
         }
       })

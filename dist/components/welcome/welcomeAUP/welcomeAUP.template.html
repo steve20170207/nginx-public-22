@@ -24,6 +24,7 @@
 
       <a class="col-xs-12 text-center"
          id="aup-terms-of-use-link"
+         ng-if="multitenancy.TOC_LINK_KEY | translate"
          ng-href="{{multitenancy.TOC_LINK_KEY | translate }}"
          target="_blank">
         {{ 'welcomeAUP.ACK_TERMS_READ' | translate }}
