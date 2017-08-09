@@ -9,16 +9,16 @@
 
 /* @ngInject */
 function ImmunizationTypeahead$ctrl (
-  By, Endpoint, GatingQuestionService, Is,
-  Agent, Lot, Trade
+  By,
+  Endpoint,
+  GatingQuestionService,
+  Is,
+  Agent,
+  Immunization,
+  Lot,
+  Trade
 ) {
   const MAX_IMMUNIZATION_RESULTS = 10
-  const GATING_RESPONSE = {
-    // TODO: What's up with these values?
-    INTERNATIONAL: 4,
-    CANADA: 3,
-    ONTARIO: 2
-  }
 
   this.displayCard = false
 
@@ -26,7 +26,7 @@ function ImmunizationTypeahead$ctrl (
     this.onVaccineSelect = onVaccineSelect
     this.onFieldClear = onFieldClear
     this.getImmunization = getImmunization
-    this.gatingResponse = GATING_RESPONSE
+    this.gatingResponse = Immunization.locations
 
     this.selectedVaccine = ''
     this.remaining = 0
@@ -44,7 +44,9 @@ function ImmunizationTypeahead$ctrl (
     this.model.agent = selected.agent
     this.model.trade = selected.trade
     this.model.lot = selected.lot
+    this.model.location = GatingQuestionService.getGatingQuestion()
     this.selectedVaccine = this.model
+
     this.onAfterSelect()
   }
 
@@ -143,13 +145,13 @@ function ImmunizationTypeahead$ctrl (
    */
   let filterImmunizationsByGating = (immunizations) => {
     switch (GatingQuestionService.getGatingQuestion()) {
-      case GATING_RESPONSE.ONTARIO:
+      case Immunization.location.ONTARIO:
         return immunizations.filter(Is.immunization.ontarioPrevalence)
 
-      case GATING_RESPONSE.CANADA:
+      case Immunization.location.CANADA:
         return immunizations.filter(Is.immunization.canadaPrevalence)
 
-      case GATING_RESPONSE.INTERNATIONAL:
+      case Immunization.location.INTERNATIONAL:
       default:
         return immunizations.filter(Is.immunization.internationalPrevalence)
     }

@@ -245,7 +245,7 @@
     "REMOVE_FILE": "Remove"
   },
   "editImmunization": {
-    "CLOSE_MODAL": "Close Modal",
+    "CLOSE": "Close",
     "IMMUNIZATION_MODAL_TITLE": "Enter a date and the immunization {{patient_name}} received on that date.",
     "DATE_ESTIMATED": "Date is estimated",
     "SAVE": "Save",
@@ -1228,11 +1228,11 @@
     "OCPH": {
       "PHU_NAME": "Oxford County Public Health",
       "PHU_PHONE": "519-539-9800",
-      "PHU_PHONE_EXT": "",
+      "PHU_PHONE_EXT": "3410",
       "PHU_PHONE_2": "1-800-755-0394",
       "PHU_PHONE_2_EXT": "",
       "PHU_CONTACT_PERSON": "a Oxford County Public Health nurse",
-      "PHU_ADDRESS": "<strong>Coordinator of Legislative Services</strong><br aria-hidden=\"true\" />Oxford County Public Health<br aria-hidden=\"true\" />P.O. Box 1614, 21 Reeve Street<br aria-hidden=\"true\" />Woodstock, Ontario<br aria-hidden=\"true\" />N4S 7Y3",
+      "PHU_ADDRESS": "<strong>Coordinator of Legislative Services</strong><br aria-hidden=\"true\" />County of Oxford<br aria-hidden=\"true\" />P.O. Box 1614, 21 Reeve Street<br aria-hidden=\"true\" />Woodstock, Ontario<br aria-hidden=\"true\" />N4S 7Y3",
       "PHU_RESPONSE_TIME": "5 business days",
       "PHU_TOC_LINK": "http://www.oxfordcounty.ca/General/Privacy-Terms-of-Use/Privacy/PHIPA/Public-Health",
       "PHU_WEBSITE": "http://www.oxfordcounty.ca/health"
@@ -1341,9 +1341,9 @@
       "PHU_PHONE_2_EXT": "",
       "PHU_CONTACT_PERSON": "a Simcoe Muskoka District Health Unit nurse",
       "PHU_ADDRESS": "<strong>The Office of the Privacy Office</strong><br aria-hidden=\"true\" />Simcoe Muskoka District Health Unit<br aria-hidden=\"true\" />15 Sperling Drive<br aria-hidden=\"true\" />Barrie, ON<br aria-hidden=\"true\" />L4M 6K9",
-      "PHU_RESPONSE_TIME": "5-10 Business Days",
+      "PHU_RESPONSE_TIME": "5-10 business days",
       "PHU_TOC_LINK": "http://www.simcoemuskokahealth.org/HealthUnit/Disclaimer.aspx",
-      "PHU_WEBSITE": "http://www.smdhu.org/immsonline"
+      "PHU_WEBSITE": "http://www.smdhu.org/"
     },
     "TBDHU": {
       "PHU_NAME": "Thunder Bay District Health Unit",

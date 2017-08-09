@@ -245,7 +245,7 @@
     "REMOVE_FILE": "Enlever"
   },
   "editImmunization": {
-    "CLOSE_MODAL": "Fermer",
+    "CLOSE": "Fermer",
     "IMMUNIZATION_MODAL_TITLE": "Inscrivez la date et le vaccin administré à {{patient_name}} à cette date.",
     "DATE_ESTIMATED": "Date estimée",
     "SAVE": "Sauvegarder",
@@ -1232,7 +1232,7 @@
     "OCPH": {
       "PHU_NAME": "Bureau de santé publique du comté Oxford",
       "PHU_PHONE": "519-539-9800",
-      "PHU_PHONE_EXT": "",
+      "PHU_PHONE_EXT": "3410",
       "PHU_PHONE_2": "1-800-755-0394",
       "PHU_PHONE_2_EXT": "",
       "PHU_CONTACT_PERSON": "un membre du personnel soignant du bureau de santé publique du comté Oxford",
@@ -1347,7 +1347,7 @@
       "PHU_ADDRESS": "<strong>Bureau de l'agent de protection de la vie privée</strong><br aria-hidden=\"true\" />Bureau de santé du district de Simcoe Muskoka<br aria-hidden=\"true\" />15 Sperling Drive<br aria-hidden=\"true\" />Barrie, ON<br aria-hidden=\"true\" />L4M 6K9",
       "PHU_RESPONSE_TIME": "5-10 jours ouvrables",
       "PHU_TOC_LINK": "http://www.simcoemuskokahealth.org/HealthUnit/Disclaimer.aspx",
-      "PHU_WEBSITE": "http://www.smdhu.org/immsonline"
+      "PHU_WEBSITE": "http://www.smdhu.org/"
     },
     "TBDHU": {
       "PHU_NAME": "Bureau de santé publique du district de Thunder Bay",

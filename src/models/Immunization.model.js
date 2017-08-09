@@ -7,6 +7,12 @@ const IMMUNIZATION_TYPE = {
   BRANDED: `Trade` // Branded vaccine: has agent and trade data
 }
 
+const IMMUNIZATION_LOCATION = {
+  CANADA: 3,
+  INTERNATIONAL: 4,
+  ONTARIO: 2
+}
+
 /**
  * @param {string} [date=''] - date immunization was administered
  * @param {boolean} [isDateApproximate=false] - flag for approximate date
@@ -71,6 +77,7 @@ function Immunization (
 }
 
 Immunization.type = IMMUNIZATION_TYPE
+Immunization.location = IMMUNIZATION_LOCATION
 
 export default {
   name: 'Immunization',

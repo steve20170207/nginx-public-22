@@ -49,8 +49,8 @@ function AnalyticsLogger (moment, Endpoint, TokenHandler) {
    * @param {CustomEvent} - the analytics event dispatched by $analytics module
    */
   function handleEventTrack ({ detail }) {
-    if (eventAction[detail]) Endpoint.postAnalyticsLog(eventAction[detail]).catch(angular.noop)
-    else console.error(`Event Action "${detail}" is not a valid option for logging!`)
+    const action = eventAction[detail] || detail
+    Endpoint.postAnalyticsLog(action).catch(angular.noop)
   }
 
   /**

@@ -1,13 +1,17 @@
 /* @ngInject */
 function submitImmunizations$ctrl (
+  $analytics,
   $q,
   $state,
+  $translate,
+  AnalyticsLogger,
   EditReviewService,
   Endpoint,
   FileUploadHandler,
   ImmunizationRecordConverter,
   ImmunizationRecordService,
   Notify,
+  Immunization,
   ICON_NOTIFICATION
 ) {
   this.$onInit = () => {
@@ -19,6 +23,26 @@ function submitImmunizations$ctrl (
     this.invalidDate = ImmunizationRecordService.checkDOBAgainstImmunizationDate(patientInfo.dateOfBirth, immunizations)
 
     const submitImmunizations = () => {
+      const numberOfCanadaImmunizations = immunizations
+            .filter(i => (i.location === Immunization.location.CANADA))
+            .length
+      const numberOfInternationalImmunizations = immunizations
+            .filter(i => (i.location === Immunization.location.INTERNATIONAL))
+            .length
+      const numberOfOntarioImmunizations = immunizations
+            .filter(i => (i.location === Immunization.location.ONTARIO))
+            .length
+      const submissionLanguage = ($translate.use().toLowerCase() === 'fr')
+            ? 'fr'
+            : 'en'
+
+      $analytics.eventTrack({
+        numberOfCanadaImmunizations,
+        numberOfInternationalImmunizations,
+        numberOfOntarioImmunizations,
+        submissionLanguage
+      })
+
       return ImmunizationRecordConverter.convert(ImmunizationRecordService)
       .then(Endpoint.submitImmunizationRecord)
     }
@@ -36,20 +60,23 @@ function submitImmunizations$ctrl (
         switch (status) {
           case uploadStatus.PAYLOAD_TOO_LARGE:
             Notify.publish(ICON_NOTIFICATION.WARN_DOCUMENT_FILE_TOO_LARGE)
+            EditReviewService.setFromReviewPage(true)
+            $state.go('^.documents')
             break
 
           case uploadStatus.UNSUPPORTED_MEDIA_TYPE:
             Notify.publish(ICON_NOTIFICATION.WARN_DOCUMENT_FILE_BAD_TYPE)
+            EditReviewService.setFromReviewPage(true)
+            $state.go('^.documents')
             break
 
           case uploadStatus.UNPROCESSABLE_ENTITY:
           default:
             Notify.publish(ICON_NOTIFICATION.WARN_GENERAL_NETWORK_ERROR)
+            EditReviewService.setFromReviewPage(true)
+            $state.go('^.documents')
             break
         }
-
-        EditReviewService.setFromReviewPage(true)
-        $state.go('^.documents')
 
         return $q.reject()
       })
