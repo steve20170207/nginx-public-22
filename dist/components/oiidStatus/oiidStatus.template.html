@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form name="submitWithOiidForm" id="submitWithOiidForm" novalidate>
+      <h3 translate="welcomeAuthActions.AUTH_ACTION_TITLE"></h3>
+      <div class="form-group">
+        <oiid-capture
+        form="submitWithOiidForm"
+        oiid="$ctrl.patient.oiid"
+        is-optional="false"
+        on-oiid-change="$ctrl.resetShowOiidError()">
+          <errors>
+            <div ng-if="$ctrl.showOiidError" class="alert alert-danger col-xs-12" translate="oiidCapture.ERRORS.OIID_INVALID"></div>
+          </errors>
+        </oiid-capture>
+      </div>
+
+      <button
+      class="btn btn-primary"
+      id="submitWithOiidButton"
+      type="submit"
+      translate="welcomeAuthActions.AUTH_ACTION_VERIFY_BUTTON"
+      ng-click="$ctrl.verifyOiid(submitWithOiidForm)">
+      </button>
+    </form>
+  </div>
+
+  <div class="col-xs-12">
+    <br aria-hidden="true" />
+    <p translate="welcomeAuthActions.AUTH_ACTION_OIID_HINT" translate-compile></p>
+  </div>
+</div>

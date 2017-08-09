@@ -1,0 +1,87 @@
+
+<div class="row">
+  <h4 translate="patientOtherDisplay.PATIENT_TITLE" class="col-xs-6"></h4>
+</div>
+
+<div class="row icon-input-bottom">
+  <div class="col-xs-12 text-left">
+    <div class="small text-uppercase">{{ 'patientOtherDisplay.NAME' | translate }}</div>
+  </div>
+  <div class="col-xs-12 text-left">
+    <strong>
+      <span>{{$ctrl.clientInfo.firstName}}</span>
+      <span>{{$ctrl.clientInfo.middleName}}</span>
+      <span>{{$ctrl.clientInfo.lastName}}</span>
+    </strong>
+  </div>
+</div>
+
+
+<div class="row icon-input-bottom">
+  <div class="col-xs-12 text-left">
+    <div class="small text-uppercase">{{ 'patientOtherDisplay.SEX' | translate }}</div>
+  </div>
+  <div class="col-xs-12 text-left">
+    <strong>
+      <span ng-if="($ctrl.clientInfo.gender | lowercase) == 'female'" class="text-capitalize">{{ 'patientOtherDisplay.SEX_FEMALE' | translate }}</span>
+      <span ng-if="($ctrl.clientInfo.gender | lowercase) == 'male'" class="text-capitalize">{{ 'patientOtherDisplay.SEX_MALE' | translate }}</span>
+      <span ng-if="($ctrl.clientInfo.gender | lowercase) == 'other'" class="text-capitalize">{{ 'patientOtherDisplay.SEX_OTHER' | translate }}</span>
+    </strong>
+  </div>
+</div>
+
+<div class="row icon-input-bottom">
+  <div class="col-xs-12 text-left">
+    <div class="small text-uppercase">{{'patientOtherDisplay.BIRTHDATE' | translate}}</div>
+  </div>
+  <div class="col-xs-12 text-left">
+    <strong>
+      <span>{{$ctrl.clientInfo.dateOfBirth | date:'yyyy-MMM-dd'}}</span>
+    </strong>
+  </div>
+</div>
+
+<div class="row icon-input-bottom" ng-if="$ctrl.clientInfo.healthCardNumber != ''">
+  <div class="col-xs-12 text-left">
+    <div class="small text-uppercase" translate="patientOtherDisplay.HEALTH_CARD_NUMBER"></div>
+  </div>
+  <div class="col-xs-12 text-left">
+    <strong>
+      <span>{{$ctrl.clientInfo.healthCardNumber | hcnFormat}}</span>
+    </strong>
+  </div>
+</div>
+
+<div class="row icon-input-bottom" ng-if="$ctrl.clientInfo.oiid != ''">
+  <div class="col-xs-12 text-left">
+    <div class="small text-uppercase" translate="patientOtherDisplay.OIID"></div>
+  </div>
+  <div class="col-xs-12 text-left">
+    <strong>
+      <span>{{$ctrl.clientInfo.oiid | hcnFormat}}</span>
+    </strong>
+  </div>
+</div>
+
+<div class="row" ng-if="$ctrl.clientInfo.schoolOrDayCare != ''">
+  <div class="col-xs-12 text-left">
+    <div class="small text-uppercase">{{ 'patientOtherDisplay.DAYCARE' | translate}}</div>
+  </div>
+  <div class="col-xs-12 text-left">
+    <strong>
+      <span>{{$ctrl.clientInfo.schoolOrDayCare}}</span>
+    </strong>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <edit-button
+        button-id="review-edit-patient-button"
+        button-text="{{'patientOtherDisplay.EDIT' | translate}} {{'patientOtherDisplay.PATIENT_TITLE' | translate}}"
+        go-to-route="^.patient">
+    </edit-button>
+  </div>
+</div>

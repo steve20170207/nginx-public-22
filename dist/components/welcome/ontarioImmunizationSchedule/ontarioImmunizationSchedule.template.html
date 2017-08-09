@@ -1,0 +1,40 @@
+  <!-- Schedule Info -->
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <hr>
+    <h3 id='schedule-title'
+        class="h4"
+        translate="schedule.SCHEDULED_IMMS_TITLE"
+        aria-describedby="imms-schedule-message-aria"
+        tabindex="0">
+    </h3>
+    <span id='imms-schedule-message-aria'
+          class="hidden"
+          translate="schedule.IMMS_SCHEDULE_MESSAGE_ARIA"
+          translate-compile>
+    </span>
+  </div>
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <div class="well" id="ontario-schedule-container" du-scroll-container>
+      <ontario-immunization-schedule-content></ontario-immunization-schedule-content>
+    </div>
+
+    <span class="fa-stack fa-2x icon-scroll-button pull-left" ng-click="$ctrl.scrollLeft()" aria-hidden="true">
+      <em class="fa fa-circle fa-stack-2x icon-scroll-button-background"></em>
+      <em class="fa fa-chevron-left fa-stack-1x"></em>
+    </span>
+
+    <span class="fa-stack fa-2x icon-scroll-button pull-right" ng-click="$ctrl.scrollRight()" aria-hidden="true">
+      <em class="fa fa-circle fa-stack-2x icon-scroll-button-background"></em>
+      <em class="fa fa-chevron-right fa-stack-1x"></em>
+    </span>
+
+  </div>
+  <div  class="col-xs-12 col-sm-10 col-sm-offset-1">
+    <a href="{{'schedule.PRINTABLE_LINK' | translate}}"  target="_blank"  aria-label="{{ 'welcomeLandingPage.PRINT_SCHEDULE_LABEL' | translate }}">
+      <span class="fa fa-print"></span>
+      {{ 'welcomeLandingPage.PRINT_SCHEDULE' | translate }}
+    </a>
+  </div>
+</div>
+<!-- End Schedule Info -->

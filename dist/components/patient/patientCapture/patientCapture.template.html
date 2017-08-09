@@ -1,0 +1,232 @@
+<div>
+  <fieldset>
+
+    <!--Patient First Name-->
+    <div class="row">
+      <div class="form-group col-xs-12 col-sm-12 col-md-6">
+        <label for="patient-first-name"  aria-label="{{'patientCapture.FIRST_NAME' | translate}}">{{'patientCapture.FIRST_NAME' | translate}}</label>
+
+        <input ng-model="$ctrl.localPatient.firstName"
+               name="patientFirstName"
+               id="patient-first-name"
+               class="form-control"
+               ng-required="true"
+               ng-maxlength="30"
+               ng-pattern = $ctrl.rgx.NAME
+               type="text"/>
+
+        <!--Error Messages-->
+        <div class="error-messages" id="patient-first-name-error" ng-messages="$ctrl.form.patientFirstName.$error" ng-if="$ctrl.form.patientFirstName.$touched">
+          <div class="alert alert-danger col-xs-12" role="alert" ng-message="required" translate='patientCapture.ERRORS.FIRST_NAME_REQUIRED' aria-label="{{'patientCapture.ERRORS.FIRST_NAME_REQUIRED' | translate}}"></div>
+          <div class="alert alert-danger col-xs-12" role="alert" ng-message="pattern" translate='patientCapture.ERRORS.BAD_FORMAT' aria-label="{{'patientCapture.ERRORS.BAD_FORMAT' | translate}}"></div>
+          <div class="alert alert-danger col-xs-12" role="alert" ng-message="maxlength" translate='patientCapture.ERRORS.EXCEEDS_MAXLENGTH' aria-label="{{'patientCapture.ERRORS.EXCEEDS_MAXLENGTH' | translate}}"></div>
+        </div>
+        <!--End Error Messages-->
+      </div>
+    </div>
+    <!--End Patient First Name-->
+
+    <!--Patient Middle Name-->
+    <div class="row">
+      <div class="form-group col-xs-12 col-sm-12 col-md-6">
+        <label for="patient-middle-name" translate='patientCapture.MIDDLE_NAME' aria-label="{{'patientCapture.MIDDLE_NAME' | translate}}"></label> <span>{{'OPTIONAL' | translate}}</span>
+
+        <input ng-model="$ctrl.localPatient.middleName"
+               name="patientMiddleName"
+               ng-maxlength="20"
+               ng-pattern = $ctrl.rgx.NAME
+               id="patient-middle-name" class="form-control"
+               type="text" />
+
+        <!--Error Messages-->
+        <div class="error-messages" id="patient-middle-name-error" ng-messages="$ctrl.form.patientMiddleName.$error" ng-if="$ctrl.form.patientMiddleName.$touched">
+          <div class="alert alert-danger col-xs-12" ng-message="pattern"
+               translate='patientCapture.ERRORS.BAD_FORMAT' translate-compile
+               role="alert"></div>
+          <div class="alert alert-danger col-xs-12"
+               ng-message="maxlength" translate='patientCapture.ERRORS.EXCEEDS_MAXLENGTH'
+               aria-label="{{'patientCapture.ERRORS.EXCEEDS_MAXLENGTH' | translate}}"
+               role="alert"></div>
+        </div>
+        <!--End Error Messages-->
+      </div>
+    </div>
+    <!--End Patient Middle Name-->
+
+    <!--Patient Last Name-->
+    <div class="row">
+      <div class="form-group col-xs-12 col-sm-12 col-md-6">
+        <label for="patient-last-name" class="required" aria-label="{{'patientCapture.LAST_NAME' | translate}}" translate-compile>{{'patientCapture.LAST_NAME' | translate}}</label>
+
+        <input ng-model="$ctrl.localPatient.lastName"
+               name="patientLastName"
+               ng-required="true"
+               ng-maxlength="30"
+               ng-pattern = $ctrl.rgx.NAME
+               id="patient-last-name" class="form-control"
+               type="text"/>
+
+        <!--Error Messages-->
+        <div class="error-messages" id="patient-last-name-error" ng-messages="$ctrl.form.patientLastName.$error" ng-if="$ctrl.form.patientLastName.$touched">
+          <div class="alert alert-danger col-xs-12" role="alert" ng-message="required" translate='patientCapture.ERRORS.LAST_NAME_REQUIRED' aria-label="{{'patientCapture.ERRORS.LAST_NAME_REQUIRED' | translate}}"></div>
+          <div class="alert alert-danger col-xs-12" role="alert" ng-message="pattern" translate='patientCapture.ERRORS.BAD_FORMAT' aria-label="{{'patientCapture.ERRORS.BAD_FORMAT' | translate}}"></div>
+          <div class="alert alert-danger col-xs-12" role="alert" ng-message="maxlength" translate='patientCapture.ERRORS.EXCEEDS_MAXLENGTH' aria-label="{{'patientCapture.ERRORS.EXCEEDS_MAXLENGTH' | translate}}"></div>
+        </div>
+        <!--End Error Messages-->
+      </div>
+    </div>
+    <!--End Patient Last Name-->
+
+    <!-- Date of birth -->
+    <div class="row">
+      <div class="form-group col-xs-12 col-sm-12 col-md-6">
+        <!-- Datepicker component -->
+        <datepicker
+        input-id="patient-dob"
+        input-name="dateOfBirth"
+        model="$ctrl.localPatient.dateOfBirth"
+        form-name="$ctrl.form"
+        min-date="1900-01-01"
+        on-after-select="$ctrl.calculateIfPatientIsOver18(date)"
+        required="true">
+          <label for="patient-dob">{{'patientCapture.DOB' | translate}}</label>
+        </datepicker>
+        <!-- End of datepicker component -->
+      </div>
+    </div>
+    <!-- End Date of birth -->
+
+    <!--Patient Sex-->
+    <div class="form-group row" role="group" tabindex="0" aria-label="{{'patientCapture.SEX' | translate}}">
+      <div class="col-xs-12">
+        <label for="patient-gender-options">{{'patientCapture.SEX' | translate}}</label>
+      </div>
+
+      <div class="col-xs-12 col-md-6">
+        <div id="patient-gender-options" class="btn-group col-xs-12 icon-remove-padding">
+          <button class="btn btn-info col-xs-4" tabindex="0"
+            type="button"
+            ng-model="$ctrl.localPatient.gender"
+            name="gender"
+            uib-btn-radio= '$ctrl.genders.MALE'
+            ng-required="true"
+            id="patient-sex-male">
+            <span ng-if="$ctrl.localPatient.gender == $ctrl.genders.MALE" class="fa fa-check"></span>
+            {{'patientCapture.SEX_MALE' | translate}}
+          </button>
+
+          <button class="btn btn-info col-xs-4" tabindex="0"
+            type="button"
+            ng-model="$ctrl.localPatient.gender"
+            name="gender"
+            uib-btn-radio= '$ctrl.genders.FEMALE'
+            ng-required="true"
+            id="patient-sex-female">
+            <span ng-if="$ctrl.localPatient.gender == $ctrl.genders.FEMALE" class="fa fa-check"></span>
+            {{'patientCapture.SEX_FEMALE' | translate}}
+          </button>
+
+          <button class="btn btn-info col-xs-4" tabindex="0"
+            type="button"
+            ng-model="$ctrl.localPatient.gender"
+            name="gender"
+            uib-btn-radio='$ctrl.genders.OTHER'
+            ng-required="true"
+            id="patient-sex-other">
+            <span ng-if="$ctrl.localPatient.gender == $ctrl.genders.OTHER" class="fa fa-check"></span>
+            {{'patientCapture.SEX_OTHER' | translate}}
+          </button>
+        </div>
+
+        <!--Error Messages-->
+        <div class="error-messages"
+             id="patient-sex-error"
+             ng-messages="$ctrl.form.gender.$error"
+             ng-if="$ctrl.form.gender.$touched"
+             >
+          <div class="alert alert-danger col-xs-12" role="alert" ng-message="required" translate='patientCapture.ERRORS.SEX_ERROR'></div>
+        </div>
+      </div>
+    </div>
+    <!--End Patient Sex-->
+
+    <!--Submitter phone number info if submitter is self -->
+
+    <div ng-if="$ctrl.localSubmitterInfo != null"  class="row">
+      <div class="col-xs-12 col-md-6">
+        <submitter-phone
+          form="$ctrl.form"
+          local-submitter-info="$ctrl.localSubmitterInfo">
+        </submitter-phone>
+      </div>
+    </div>
+
+    <!-- End submitter phone number info -->
+
+    <!--Health Card Number-->
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <hcn-capture health-card-number="$ctrl.localPatient.healthCardNumber"
+                     form="$ctrl.form"
+                     is-optional="true"
+                     display-image="true">
+        </hcn-capture>
+      </div>
+    </div>
+    <!--End Health Card Number-->
+
+    <!--Patient OIID-->
+    <div class='row'>
+      <div class="col-xs-12 col-md-6">
+        <oiid-capture oiid="$ctrl.localPatient.oiid"
+                      form="$ctrl.form"
+                      is-optional="true">
+        </oiid-capture>
+      </div>
+    </div>
+    <!--End Patient OIID-->
+
+
+    <!--Patient School or Daycare-->
+    <div class="row" ng-if="$ctrl.ageInYears < 18">
+      <div class="form-group col-xs-12 col-sm-12 col-md-6">
+        <label for="patient-school" translate='patientCapture.DAYCARE' aria-label="{{'patientCapture.DAYCARE' | translate}}"></label>
+        {{'patientCapture.DAYCARE_OPTIONAL' | translate}}
+        <input type="text"
+               id="patient-school"
+               name="schoolOrDaycare"
+               class="form-control"
+               ng-pattern="$ctrl.rgx.SCHOOL_NAME"
+               ng-maxlength="100"
+               ng-model="$ctrl.localPatient.schoolOrDayCare"
+               typeahead-editable="false"
+               typeahead-loading="loadingLocations"
+               typeahead-no-results="noResults"
+               typeahead-on-select="$ctrl.onSchoolOrDaycareSelect($item)"
+               uib-typeahead="schools.queryString for schools in $ctrl.getSchoolOrDaycare($viewValue) | limitTo:8"
+               autocomplete="off" />
+
+        <span ng-show="loadingLocations" class="fa fa-refresh" aria-hidden="true"></span>
+
+        <!--Error Messages-->
+        <div class="error-messages" id="patient-school-error" ng-messages="$ctrl.form.schoolOrDaycare.$error" ng-if="$ctrl.form.schoolOrDaycare.$dirty">
+          <div class="alert alert-danger" role="alert" ng-message="pattern" translate='patientCapture.ERRORS.BAD_FORMAT'></div>
+          <div class="alert alert-danger" role="alert" ng-message="maxlength" translate='patientCapture.ERRORS.EXCEEDS_MAXLENGTH'></div>
+        </div>
+        <!--End Error Messages-->
+
+        <div ng-show="noResults">
+          {{ 'patientCapture.NO_RESULTS_FOUND' | translate }}
+        </div>
+
+        <div>
+          {{ 'patientCapture.DAYCARE_TOOLTIP' | translate}}
+        </div>
+
+      </div>
+    </div>
+    <!--End School or Daycare-->
+
+
+  </fieldset>
+</div>
