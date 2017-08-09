@@ -40,7 +40,7 @@ module.exports = {
             { from: './src/index.html',                                 to: '../dist/index.html' },
             { from: './src/android-chrome-192x192.png',                 to: '../dist/android-chrome-192x192.png' },
             { from: './src/android-chrome-256x256.png',                 to: '../dist/android-chrome-256x256.png' },
-            { from: './src/apple-touch-icon.png',                       to: '. ./dist/apple-touch-icon.png' },
+            { from: './src/apple-touch-icon.png',                       to: '../dist/apple-touch-icon.png' },
             { from: './src/browserconfig.xml',                          to: '../dist/browserconfig.xml' },
             { from: './src/favicon.ico',                                to: '../dist/favicon.ico' },
             { from: './src/favicon-16x16.png',                          to: '../dist/favicon-16x16.png' },
