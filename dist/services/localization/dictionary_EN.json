@@ -1394,7 +1394,7 @@
       "PHU_WEBSITE": "https://www.wdgpublichealth.ca/healthcare-providers/vaccines-immunization"
     },
     "WECHU": {
-      "PHU_NAME": "Windsor Essex County Health Unit",
+      "PHU_NAME": "Windsor-Essex County Health Unit",
       "PHU_PHONE": "519-258-2146",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-265-5822",
@@ -1402,8 +1402,8 @@
       "PHU_CONTACT_PERSON": "a Windsor Essex County Health Unit nurse",
       "PHU_ADDRESS": "<strong>Privacy Officer</strong><br aria-hidden=\"true\" />Windsor Essex County Health Unit<br aria-hidden=\"true\" /> 1005 Ouellette Avenue<br aria-hidden=\"true\" />Windsor, ON<br aria-hidden=\"true\" />N9A 4J8",
       "PHU_RESPONSE_TIME": "3 days during normal operations but up to one week during peak assessment periods",
-      "PHU_TOC_LINK": "https://www.wechu.org/key-policies/terms-use ",
-      "PHU_WEBSITE": "https://www.wechu.org/your-health/immunization "
+      "PHU_TOC_LINK": "https://www.wechu.org/key-policies/terms-use",
+      "PHU_WEBSITE": "https://www.wechu.org/"
     },
     "YRPHU": {
       "PHU_NAME": "York Region Public Health",

@@ -1398,7 +1398,7 @@
       "PHU_WEBSITE": "https://www.wdgpublichealth.ca/healthcare-providers/vaccines-immunization"
     },
     "WECHU": {
-      "PHU_NAME": "Bureau de santé du comté de Windsor Essex",
+      "PHU_NAME": "Bureau de santé de Windsor-comté d’Essex",
       "PHU_PHONE": "519-258-2146",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-265-5822",
@@ -1406,8 +1406,8 @@
       "PHU_CONTACT_PERSON": "un membre du personnel soignant du bureau de santé du comté de Windsor Essex",
       "PHU_ADDRESS": "<strong>Agent de protection de la vie privée</strong><br aria-hidden=\"true\" />Bureau de santé du comté de Windsor Essex<br aria-hidden=\"true\" /> 1005 av. Ouellette<br aria-hidden=\"true\" />Windsor, ON<br aria-hidden=\"true\" />N9A 4J8",
       "PHU_RESPONSE_TIME": "3 jours en période d'activités normales mais jusqu'à 1 semaine en pleine période d'évaluation",
-      "PHU_TOC_LINK": "https://www.wechu.org/key-policies/terms-use ",
-      "PHU_WEBSITE": "https://www.wechu.org/your-health/immunization "
+      "PHU_TOC_LINK": "https://www.wechu.org/key-policies/terms-use",
+      "PHU_WEBSITE": "https://www.wechu.org/"
     },
     "YRPHU": {
       "PHU_NAME": "Bureau de santé de la région York",

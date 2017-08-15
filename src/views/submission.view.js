@@ -1,5 +1,11 @@
 /* @ngInject */
-function submission$ctrl () {}
+function submission$ctrl (ImmunizationRecordService) {
+  this.$onInit = () => {
+    this.localPatient = ImmunizationRecordService.getPatient()
+    this.localPatient.oiid = ''
+    ImmunizationRecordService.setPatient(this.localPatient)
+  }
+}
 
 export default {
   name: 'submission',
