@@ -919,7 +919,7 @@
     "INTRO_3_LIST_D": "Possibilités de bénévolat ou d'emploi",
     "INTRO_3_LIST_E": "Voyage dans certains pays",
     "INTRO_4": "Comment utiliser ce site? ",
-    "INTRO_5": "Chaque fois que vous ou votre enfant vous faire vacciner, inscrivez le vaccin ici pour vous assurer que votre dossier d’immunisations est complet et que votre bureau de santé publique local le reçoit.",
+    "INTRO_5": "Chaque fois que vous ou votre enfant vous faites vacciner, inscrivez le vaccin ici pour vous assurer que votre dossier d’immunisations est complet et que votre bureau de santé publique local le reçoit.",
     "SCHEDULE_LABEL": "Calendrier de vaccination de l'Ontario",
     "SCHEDULE_RATIONALE": "Pour fréquenter une école, les enfants doivent avoir été vaccinés contre les maladies indiquées en italique, comme l'exige la Loi sur l'immunisation des élèves. REMARQUE: Les enfants nés le 1<sup>er</sup> janvier 2010 ou après cette date doivent également être vaccinés contre la varicelle.",
     "PRINT_SCHEDULE_LABEL": "Imprimer le calendrier de l'Ontario.",
@@ -942,9 +942,9 @@
     "ANON_ACTION_OIID_HINT": "<button class='icon-btn-link' id='home-oiid-link-one' ng-click='$ctrl.openHelpModal()'>Renseignements</button> sur ce que sont le n<sup>o</sup> d’identification d’immunisation de l’Ontario et le NIP, et où les trouver."
   },
   "welcomeLogin": {
-    "VIEW_BUTTON_TITLE": "Signaler les immunisations",
-    "VIEW_BUTTON_PARA": "Vous pouvez voir les vaccins qui sont courants, en retard ou à venir. C'est comme votre  carte jaune, mais en mieux.",
-    "SUBMIT_BUTTON_TITLE": "Envoyer les renseignements sur les vaccins",
+    "VIEW_BUTTON_TITLE": "Consulter les immunisations",
+    "VIEW_BUTTON_PARA": "Vous pouvez voir les vaccins qui sont courants, en retard ou à venir. C'est comme votre carte jaune, mais en mieux.",
+    "SUBMIT_BUTTON_TITLE": "Signaler les immunisations",
     "SUBMIT_BUTTON_PARA": "Signalez les vaccins reçus à votre bureau de santé publique local pour savoir où vous en êtes.",
     "AUTHENTICATION": "Entrer un numéro d'identification et un NIP",
     "ANON_LABEL": "Vous n'avez pas de n<sup>o</sup> d'identification d'immunisation de l'Ontario ni de NIP?",
