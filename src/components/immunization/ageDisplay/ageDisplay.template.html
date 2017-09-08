@@ -14,7 +14,7 @@
 
 <!-- When the patient is older than 2 years, display age in years. -->
 <div ng-if="$ctrl.age.years >= 2">
-  {{ 'ageDisplay.AGE' | translate }} ({{ 'ageDisplay.APPROX' | translate }}):
+  {{ 'ageDisplay.AGE' | translate }} {{ 'ageDisplay.APPROX' | translate }}
 
   <span>
     {{$ctrl.age.years}} {{'ageDisplay.YEAR' | translate}}{{($ctrl.age.years > 1) ? 's' : ''}}

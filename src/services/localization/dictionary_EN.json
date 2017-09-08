@@ -88,7 +88,7 @@
     "MONTH": "month",
     "DAY": "day",
     "LESS_THAN_ONE_DAY": "Less than 1",
-    "APPROX": "approx"
+    "APPROX": "(approx):"
   },
   "anonOtherReview": {
     "DOCUMENTS_TITLE": "Documents",
@@ -204,7 +204,7 @@
     "COMPLETION_TITLE": "Submission Complete",
     "COMPLETION_MESSAGE": "We have received your submission for <strong>{{ clientName }}</strong> and a staff member from <strong>{{ phuName }}</strong> will review this submission within {{ time_to_process }}. We will be in touch if there are any questions.",
     "REFERENCE_NUMBER_LABEL": "REFERENCE NUMBER",
-    "REFERENCE_NUMBER_MESSAGE": "Please keep this number for your records. You can also print or save a PDF copy of the information you have just submitted. If you have provided an email address, you will be notified once your submission has been received by your Public Health Unit and once your submission has been reviewed.",
+    "REFERENCE_NUMBER_MESSAGE": "Please keep this number for your records. You can also print or save a PDF copy of the information you have just submitted. If you have provided an email address, you will be notified once your submission has been reviewed by your Public Health Unit.",
     "PRINT": "Print",
     "SAVE_PDF": "Download Printable File"
   },
@@ -279,6 +279,10 @@
     "FORGOT_PIN": "Forgot PIN",
     "VERIFY_BUTTON": "Verify Patient",
     "HINT": "<button class='icon-btn-link' id='oiid-hint-link' ng-click='$ctrl.openHelpModal()'>Learn more</button> about what the Ontario Immunization ID and PIN are and where they can be found."
+  },
+  "frenchArticle": {
+    "definite": "",
+    "partitive": ""
   },
   "hcnCapture": {
     "HEALTHCARD": "Ontario Health Card",
@@ -401,8 +405,7 @@
   },
   "noHealthCardModal": {
     "TITLE": "Don't have an Health Card Number?",
-    "PARA_1.1": "If you do not have a Health Card Number you can use a PIN which can be provided by contacting",
-    "PARA_1.2": "at",
+    "PARA_1": "If you do not have a Health Card Number you can use a PIN which can be provided by contacting <strong>{{ phuName }}</strong> at <phu-phone-display></phu-phone-display>.",
     "PARA_2": "Once you have the PIN you can return to the home screen and continue the process.",
     "RETURN_HOME": "Return Home",
     "CLOSE": "Close"
@@ -604,7 +607,7 @@
       "LAST_NAME_REQUIRED": "Last Name is a required field.",
       "BAD_FORMAT": "You have entered an invalid character.",
       "EXCEEDS_MAXLENGTH": "You have entered too many characters.",
-      "SEX_ERROR": "Please select the patient's biological sex."
+      "SEX_ERROR": "Please select the patient's sex."
     }
   },
   "patientOtherDisplay": {
@@ -644,7 +647,8 @@
     "dateIsApproximate": "Date is estimated",
     "receivedSubmission_p1_s1_f1": "We have received your submission for ",
     "receivedSubmission_p1_s1_f3": ".",
-    "receivedSubmission_p1_s2": "A staff member from {{ phuName }} will review this submission within {{phuResponseTime}}.",
+    "receivedSubmission_p1_s2_f1": "A staff member from ",
+    "receivedSubmission_p1_s2_f3": "{{ phuName }} will review this submission within {{phuResponseTime}}.",
     "receivedSubmission_p1_s3": "We will be in touch if there are any questions regarding your immunizations.",
     "reportGeneratedTime_p1_s1": "This report was generated on {{reportGeneratedDate}} at {{reportGeneratedTime}}.",
     "patientNameHeading_p1_s1_f1": "Patient: ",
@@ -676,7 +680,7 @@
     "lotNumber": "Lot #",
     "noImmunizations": "No Immunizations",
     "recommendationsTitle_p1_s1": "Immunizations Needed",
-    "recommendationsHeader_p1_s1": "As recommended by the Ontario Immunization Schedule you need immunizations to be protected against the following diseases:",
+    "recommendationsHeader_p1_s1": "Based on the current record, the following diseases require immunizations either now or in the future as recommended by the Ontario Immunization Schedule.",
     "recommendationsFooter_p1_s1_f1": "Note: ",
     "recommendationsFooter_p1_s1_f2": "Immunizations needed may change if additional immunization information is submitted.",
     "noRecommendations": "No recommendations, {{patientName}}'s immunizations are up to date.",
@@ -744,7 +748,7 @@
     "ROLE_ONESELF": "Me",
     "ROLE_GUARD": "A Dependant",
     "ERRORS": {
-      "ROLE_ERROR": "Who are you submitting for?",
+      "ROLE_ERROR": "Who are you viewing immunizations for?",
       "ROLE_ERROR_ARIA_LABEL": "You must select who you are submitting for"
     }
   },
@@ -962,7 +966,7 @@
   },
   "yellowCardRecommendations": {
     "HEADING": "Immunizations Needed",
-    "INTRO": "As recommended by the <a id='yellow-card-ontario-recommended' href='../../../img/Ontario-Immunization-Schedule-EN.pdf' target='_blank'>Ontario Immunization Schedule</a> you need immunizations to be protected against the following diseases:",
+    "INTRO": "Based on the current record, the following diseases require immunizations either now or in the future as recommended by the <a id='yellow-card-ontario-recommended' href='../../../img/Ontario-Immunization-Schedule-EN.pdf' target='_blank'>Ontario Immunization Schedule</a>:",
     "NOTE": "Note: Immunizations needed may change if additional immunization information is submitted.",
     "FOR_MORE_INFO": "For more information please visit <a href='https://www.ontario.ca/page/vaccines' target='_blank'>Ontario's Ministry of Health and Long-Term Care Immunization page</a>.",
     "PRINT_BUTTON": "Printable PDF Version of Immunization Record",
@@ -975,6 +979,7 @@
     },
     "DEFAULT": {
       "PHU_NAME": "Blank PHU Name",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "456-456-4598",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -987,6 +992,7 @@
     },
     "APH": {
       "PHU_NAME": "Algoma Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "705-942-4646",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-866-892-0172",
@@ -999,6 +1005,7 @@
     },
     "BCHU": {
       "PHU_NAME": "Brant County Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "1.519.753.4937",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -1011,6 +1018,7 @@
     },
     "CKPHU": {
       "PHU_NAME": "Chatham-Kent Public Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-355-1071",
       "PHU_PHONE_EXT": "5900",
       "PHU_PHONE_2": "",
@@ -1023,6 +1031,7 @@
     },
     "DRHD": {
       "PHU_NAME": "Durham Region Health Department",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "905-666-6241",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-841-2729",
@@ -1035,6 +1044,7 @@
     },
     "EOHU": {
       "PHU_NAME": "Eastern Ontario Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "613-933-1375",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-267-7120",
@@ -1047,6 +1057,7 @@
     },
     "ESTHU": {
       "PHU_NAME": "Elgin-St. Thomas Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-631-9900",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-922-0096",
@@ -1059,6 +1070,7 @@
     },
     "GBHU": {
       "PHU_NAME": "Grey Bruce Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-376-9420",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-263-3456",
@@ -1071,6 +1083,7 @@
     },
     "HCHU": {
       "PHU_NAME": "Huron County Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "1-519-482-3416",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-877-837-6143",
@@ -1083,6 +1096,7 @@
     },
     "HKPR": {
       "PHU_NAME": "Haliburton, Kawartha, Pine Ridge District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "905-885-9100",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-866-888-4577",
@@ -1095,6 +1109,7 @@
     },
     "HNHU": {
       "PHU_NAME": "Haldimand-Norfolk Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-426-6170",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "905-318-6623",
@@ -1107,6 +1122,7 @@
     },
     "HPECHU": {
       "PHU_NAME": "Hastings and Prince Edward Counties Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "613-966-5500",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-267-2803",
@@ -1119,6 +1135,7 @@
     },
     "HPH": {
       "PHU_NAME": "City of Hamilton Public Health Services",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "905-540-5250",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -1131,6 +1148,7 @@
     },
     "HRHD": {
       "PHU_NAME": "Halton Region Health Department",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "905-825-6000",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-866-442-5866",
@@ -1143,6 +1161,7 @@
     },
     "KFLA": {
       "PHU_NAME": "Kingston, Frontenac and Lennox & Addington Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "613-549-1232",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-267-7875",
@@ -1155,6 +1174,7 @@
     },
     "LGL": {
       "PHU_NAME": "Leeds Grenville and Lanark District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "613-345-5685",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-660-5853",
@@ -1167,6 +1187,7 @@
     },
     "LPH": {
       "PHU_NAME": "Lambton Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-383-8331",
       "PHU_PHONE_EXT": "3589/3554",
       "PHU_PHONE_2": "1-800-667-1839",
@@ -1179,6 +1200,7 @@
     },
     "MLHU": {
       "PHU_NAME": "Middlesex-London Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-663-5317",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -1191,6 +1213,7 @@
     },
     "NBPSDHU": {
       "PHU_NAME": "North Bay Parry Sound District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "705-474-1400",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-563-2808",
@@ -1203,6 +1226,7 @@
     },
     "NRPH": {
       "PHU_NAME": "Niagara Region Public Health Department",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "905-980-6000",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-263-7215",
@@ -1215,6 +1239,7 @@
     },
     "NWHU": {
       "PHU_NAME": "Northwestern Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "1-807-468-3147",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-830-5978",
@@ -1227,6 +1252,7 @@
     },
     "OCPH": {
       "PHU_NAME": "Oxford County Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-539-9800",
       "PHU_PHONE_EXT": "3410",
       "PHU_PHONE_2": "1-800-755-0394",
@@ -1239,6 +1265,7 @@
     },
     "OPH": {
       "PHU_NAME": "Ottawa Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "613-580-6744",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -1251,6 +1278,7 @@
     },
     "PCCHU": {
       "PHU_NAME": "Peterborough Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "705-743-1000",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-877-743-0101",
@@ -1263,6 +1291,7 @@
     },
     "PDHU": {
       "PHU_NAME": "Perth District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-271-7600",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-877-271-7348",
@@ -1275,6 +1304,7 @@
     },
     "PEEL": {
       "PHU_NAME": "Peel Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "905-799-7700",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "(Caledon Residents: 905-584-2216)",
@@ -1287,6 +1317,7 @@
     },
     "PO": {
       "PHU_NAME": "Porcupine Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "705-267-1181",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-461-1818",
@@ -1299,6 +1330,7 @@
     },
     "RE": {
       "PHU_NAME": "Renfrew County and District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "613-735-8653",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-267-1067",
@@ -1311,6 +1343,7 @@
     },
     "ROWPH": {
       "PHU_NAME": "Region of Waterloo Public Health and Emergency Services",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-575-4400",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -1323,6 +1356,7 @@
     },
     "SDHU": {
       "PHU_NAME": "Sudbury & District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "705-522-9200",
       "PHU_PHONE_EXT": "458",
       "PHU_PHONE_2": "1-866-522-9200",
@@ -1335,6 +1369,7 @@
     },
     "SMDHU": {
       "PHU_NAME": "Simcoe Muskoka District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "705-721-7520",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-877-721-7520",
@@ -1347,6 +1382,7 @@
     },
     "TBDHU": {
       "PHU_NAME": "Thunder Bay District Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "1-807-625-5900",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-888-294-6630",
@@ -1359,6 +1395,7 @@
     },
     "TIMHU": {
       "PHU_NAME": "Timiskaming Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "1-705-647-4305",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-866-747-4305",
@@ -1371,6 +1408,7 @@
     },
     "TPH": {
       "PHU_NAME": "Toronto Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "416-392-1250",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -1383,6 +1421,7 @@
     },
     "WDGPH": {
       "PHU_NAME": "Wellington-Dufferin-Guelph Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "1-800-265-7293",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",
@@ -1395,6 +1434,7 @@
     },
     "WECHU": {
       "PHU_NAME": "Windsor-Essex County Health Unit",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "519-258-2146",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "1-800-265-5822",
@@ -1407,6 +1447,7 @@
     },
     "YRPHU": {
       "PHU_NAME": "York Region Public Health",
+      "PHU_PLURALIZATION": "",
       "PHU_PHONE": "1-877-794-1880",
       "PHU_PHONE_EXT": "",
       "PHU_PHONE_2": "",

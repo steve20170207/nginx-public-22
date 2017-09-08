@@ -5,6 +5,7 @@ function oiidStatus$ctrl (
   $stateParams,
   AnalyticsLogger,
   DhirErrorHandler,
+  Address,
   Endpoint,
   ImmunizationRecordService,
   Notify,
@@ -28,6 +29,7 @@ function oiidStatus$ctrl (
     this.getStatus = (oiid) => {
       Endpoint.ClientStatus(oiid)
       .then(() => {
+        ImmunizationRecordService.setAddress(new Address())
         ImmunizationRecordService.setPatient(this.patient)
         $state.go('verification.enter-pin', { action: $stateParams.action })
       })

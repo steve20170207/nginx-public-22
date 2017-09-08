@@ -140,7 +140,9 @@ function PdfMaker (
         bold(data.patientName),
         text.receivedSubmission_p1_s1_f3,
         ` `,
-        text.receivedSubmission_p1_s2,
+        text.receivedSubmission_p1_s2_f1,
+        text.receivedSubmission_p1_s2_f2,
+        text.receivedSubmission_p1_s2_f3,
         ` `,
         text.receivedSubmission_p1_s3
       ]
@@ -708,7 +710,8 @@ function PdfMaker (
                  phuContactPerson: $translate(phuKeys.CONTACT_PERSON_KEY),
                  phuResponseTime: $translate(phuKeys.RESPONSE_TIME_KEY),
                  phuName: $translate(phuKeys.NAME_KEY),
-                 phuPhone: phuPhone
+                 phuPhone: phuPhone,
+                 pluralization: $translate(phuKeys.PLURALIZATION_KEY)
                })
              })
              .then((phuData) => { return Object.assign(data, phuData) })
@@ -771,6 +774,21 @@ function PdfMaker (
     return str.replace('&amp;', '&')
   }
 
+  function frenchArticle(pluralization) {
+    switch (pluralization) {
+      case 'M':
+        return 'du '
+      case 'F':
+        return 'de la '
+      case 'P':
+        return 'de les '
+      case 'V':
+        return 'de l\''
+      default:
+        return ''
+    }
+  }
+
   function localizePdfTextUsingData (data) {
     return $q.all({
       patientGender: $translate(formatGender(data.patientGender)),
@@ -778,7 +796,9 @@ function PdfMaker (
 
       receivedSubmission_p1_s1_f1: $translate('pdf.receivedSubmission_p1_s1_f1', data),
       receivedSubmission_p1_s1_f3: $translate('pdf.receivedSubmission_p1_s1_f3', data),
-      receivedSubmission_p1_s2: replaceSpecialCharacters($translate.instant('pdf.receivedSubmission_p1_s2', data)),
+      receivedSubmission_p1_s2_f1: $translate('pdf.receivedSubmission_p1_s2_f1', data),
+      receivedSubmission_p1_s2_f2: frenchArticle(data.pluralization),
+      receivedSubmission_p1_s2_f3: replaceSpecialCharacters($translate.instant('pdf.receivedSubmission_p1_s2_f3', data)),
       receivedSubmission_p1_s3: $translate('pdf.receivedSubmission_p1_s3', data),
 
       reportGeneratedTime_p1_s1: $translate('pdf.reportGeneratedTime_p1_s1', data),

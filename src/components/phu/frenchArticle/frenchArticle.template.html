@@ -1,0 +1,6 @@
+<!-- Missing closing span tag on purpose to eliminate extra whitespace after component -->
+<span class="test"
+      translate="{{ $ctrl.frenchArticleKey }}"
+      translate-values="{ PLURALIZATION: '{{ $ctrl.multitenancy.PLURALIZATION_KEY | translate }}' }"
+      translate-interpolation="messageformat"
+      translate-compile>

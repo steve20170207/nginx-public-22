@@ -6,7 +6,10 @@
     <h3 class="modal-title" translate="noHealthCardModal.TITLE"></h3>
   </div>
   <div class="modal-body">
-    <p>{{'noHealthCardModal.PARA_1.1' | translate}} {{  $ctrl.multitenancy.NAME_KEY | translate }} {{'noHealthCardModal.PARA_1.2' | translate}} <phu-phone-display></phu-phone-display>.</p>
+    <p translate="noHealthCardModal.PARA_1"
+       translate-values="{ phuName: '{{ $ctrl.multitenancy.NAME_KEY | translate }}' }"
+       translate-compile>
+    </p>
     <p translate="noHealthCardModal.PARA_2"></p>
   </div>
   <div class="modal-footer">

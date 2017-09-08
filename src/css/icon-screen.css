@@ -906,7 +906,7 @@ padding-left: 0px;
 }
 /* End Role capture buttons */
 
-/* Phu phone display */
+/* Remove extra span space */
 phu-phone-display {
   font-size: 0.1px;
 }
@@ -918,7 +918,7 @@ phu-phone-display {
   font-size: medium;
   line-height: normal;
 }
-/* End phu phone display */
+/* End remove extra span space */
 
 /* Role selection buttons on anon submission page */
 #submit-anon-self-button, #submit-anon-other-button {

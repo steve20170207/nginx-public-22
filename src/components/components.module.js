@@ -33,6 +33,7 @@ import authSchoolDaycare from './patient/authSchoolDaycareCapture/authSchoolDayc
 /* End Patient imports */
 
 /* Phu imports */
+import frenchArticle from './phu/frenchArticle/frenchArticle.component.js'
 import phuPhoneDisplay from './phu/phuPhoneDisplay/phuPhoneDisplay.component.js'
 /* End Phu imports */
 
@@ -136,6 +137,7 @@ MODULE.component(oiidStatus.name, oiidStatus.component)
 /* End Patient components */
 
 /* Phu components */
+  .component(frenchArticle.name, frenchArticle.component)
   .component(phuPhoneDisplay.name, phuPhoneDisplay.component)
 /* End Phu components */
 
