@@ -21,7 +21,8 @@ import authSelfSubmission from './authSelfSubmission.view'
 import dispatchAfterVerification from './dispatchAfterVerification.view'
 import documents from './documents.view'
 import emailConfirmation from './emailConfirmation.view'
-import enterPin from './enterPin.view'
+import enterPinOiid from './enterPinOiid.view'
+import enterPinHcn from './enterPinHcn.view'
 import forgotPin from './forgotPin.view'
 import newPin from './newPin.view'
 import other from './other.view'
@@ -59,7 +60,8 @@ angular.module('icon.views', [])
   .component(dispatchAfterVerification.name, dispatchAfterVerification.view)
   .component(documents.name, documents.view)
   .component(emailConfirmation.name, emailConfirmation.view)
-  .component(enterPin.name, enterPin.view)
+  .component(enterPinOiid.name, enterPinOiid.view)
+  .component(enterPinHcn.name, enterPinHcn.view)
   .component(forgotPin.name, forgotPin.view)
   .component(newPin.name, newPin.view)
   .component(other.name, other.view)

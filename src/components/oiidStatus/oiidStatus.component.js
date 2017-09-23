@@ -31,14 +31,14 @@ function oiidStatus$ctrl (
       .then(() => {
         ImmunizationRecordService.setAddress(new Address())
         ImmunizationRecordService.setPatient(this.patient)
-        $state.go('verification.enter-pin', { action: $stateParams.action })
+        $state.go('verification.enter-pin-oiid', { action: $stateParams.action })
       })
       .catch((dhirErrorId) => {
         switch (dhirErrorId) {
           case DHIR.error.ClientStatus.OIID_PIN_SET_NO_EMAIL_AVAILABLE:
           case DHIR.error.ClientStatus.OIID_PIN_SET_NO_HCN_AVAILABLE:
             ImmunizationRecordService.setPatient(this.patient)
-            $state.go('verification.enter-pin', { action: $stateParams.action })
+            $state.go('verification.enter-pin-oiid', { action: $stateParams.action })
             break
 
           case DHIR.error.ClientStatus.OIID_PIN_OUTDATED:

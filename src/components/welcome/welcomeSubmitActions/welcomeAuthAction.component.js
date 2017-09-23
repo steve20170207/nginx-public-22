@@ -16,7 +16,7 @@ function welcomeAuthChoice$ctrl (ImmunizationRecordService, $state, $uibModal, N
     if (form.$valid) {
       // TODO: Routing params
       ImmunizationRecordService.setPatient(this.patientInfo)
-      $state.go('verification.enter-pin', { action: 'SUBMISSION' })
+      $state.go('verification.enter-pin-oiid', { action: 'SUBMISSION' })
     } else {
       form.OIID.$setTouched()
     }

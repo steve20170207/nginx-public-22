@@ -233,7 +233,8 @@ NOTE: Causes DHIR responses with an operation outcome to be thrown to the
     .state('aup', Routes.AUP)
 
     .state('verification', Routes.VERIFICATION)
-      .state('verification.enter-pin',  Routes.ENTER_PIN)
+      .state('verification.enter-pin-oiid',  Routes.ENTER_PIN_OIID)
+      .state('verification.enter-pin-hcn',  Routes.ENTER_PIN_HCN)
 
       .state('verification.new-pin',              Routes.NEW_PIN)
       .state('verification.set-pin',              Routes.SET_PIN)

@@ -1,5 +1,5 @@
 /* @ngInject */
-function enterPin$ctrl (
+function enterPinHcn$ctrl (
  ImmunizationRecordService,
  $uibModal,
  $state,
@@ -55,55 +55,11 @@ function enterPin$ctrl (
 }
 
 export default {
-  name: 'enterPin',
+  name: 'enterPinHcn',
   view: {
-    controller: enterPin$ctrl,
+    controller: enterPinHcn$ctrl,
     template: `
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 translate="enterPin.TITLE"></h1>
-        </div>
-      </div>
-
-      <form class="form form-container" id="enterPinForm" name="enterPinForm" novalidate>
-        <oiid-display
-          oiid="$ctrl.patientInfo.oiid">
-        </oiid-display>
-        <br aria-hidden="true" />
-
-        <role-capture
-          role="$ctrl.submitterInfo.relationshipToPatient"
-          form="enterPinForm">
-        </role-capture>
-
-        <pin-capture pin="$ctrl.pin"
-                     form="enterPinForm"
-                     isOptional="false">
-          <label>{{ 'pinCapture.YELLOWCARD_RETRIEVAL_LOGIN_PIN' | translate }}</label>
-          <hint>
-            <p>
-              <button translate="enterPin.FORGOT_PIN"
-                type = "button"
-                class="icon-btn-link text-left"
-                ng-click='$ctrl.goToForgotPin()'
-                id="forgotPinButton">
-              </button>
-            </p>
-          </hint>
-        </pin-capture>
-
-         <button class="btn btn-primary"
-              type = "submit"
-              id="enterPinButton"
-              type="button"
-              translate="enterPin.VERIFY_BUTTON"
-              ng-click="$ctrl.verify(enterPinForm)">
-          </button>
-
-      </form>
-
-      <br aria-hidden="true" />
-      <p translate="enterPin.HINT" translate-compile></p>
+     
     `
   }
 }

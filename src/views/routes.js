@@ -240,9 +240,14 @@ const SET_PIN_CONFIRMATION = {
   url: (DEBUG_URL) ? `/set-pin-confirmation` : ``
 }
 
-const ENTER_PIN = {
-  component: `enterPin`,
-  url: (DEBUG_URL) ? `/enter-pin` : ``
+const ENTER_PIN_OIID = {
+  component: `enterPinOiid`,
+  url: (DEBUG_URL) ? `/enter-pin-oiid` : ``
+}
+
+const ENTER_PIN_HCN = {
+  component: `enterPinHcn`,
+  url: (DEBUG_URL) ? `/enter-pin-hcn` : ``
 }
 
 const FORGOT_PIN = {
@@ -316,7 +321,8 @@ export default {
   NEW_PIN,                  // One-time pin set, user enters (HCN)
   SET_PIN,                  // Set one-time pin, user enters (email, PIN)
   SET_PIN_CONFIRMATION,     // Confirmation PIN was set, call to action
-  ENTER_PIN,              // PIN is already set, user enters (PIN)
+  ENTER_PIN_OIID,              // PIN is already set, user enters (PIN)
+  ENTER_PIN_HCN,              // PIN is already set, user enters (PIN)
   FORGOT_PIN,               // Reset forgotten PIN, user enters (email)
   EMAIL_CONFIRMATION,       // Confirmation e-mail was triggered
   RESET_PIN,                  // Destination from e-mail link, user enters (OIID, role, PIN)
