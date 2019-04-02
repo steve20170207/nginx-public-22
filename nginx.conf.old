@@ -1,14 +1,14 @@
 worker_processes 1;
-#daemon off;
+daemon off;
 
-error_log /icon22/nginx/logs/error.log;
+error_log <%= ENV["APP_ROOT"] %>/nginx/logs/error.log;
 events { worker_connections 1024; }
 
 http {
   charset utf-8;
   log_format cloudfoundry '$http_x_forwarded_for - $http_referer - [$time_local] "$request" $status $body_bytes_sent '
     'rqst_t=$request_time pxy_resp_t=$upstream_response_time pxy_conn_t=$upstream_connect_time';
-  access_log /icon22/nginx/logs/access.log cloudfoundry;
+  access_log <%= ENV["APP_ROOT"] %>/nginx/logs/access.log cloudfoundry;
   default_type application/octet-stream;
   include mime.types;
   sendfile on;
@@ -26,7 +26,7 @@ http {
 
   tcp_nopush on;
   keepalive_timeout 300;
-  port_in_redirect off; # Ensure that redirects don't include the internal container PORT - 8088
+  port_in_redirect off; # Ensure that redirects don't include the internal container PORT - <%= ENV["PORT"] %>
   server_tokens off;
 
   # Increase the bucket size to store the map variable
@@ -36,7 +36,7 @@ http {
   client_max_body_size 6m;
 
   map $host $baseRootDir {
-      default  /icon22/public;
+      default  <%= ENV["APP_ROOT"] %>/public;
     }
 
   map $host $multiTenantDir {
@@ -139,10 +139,17 @@ http {
    }
 
   server {
-    listen 8088;
+    listen <%= ENV["PORT"] %>;
     server_name localhost;
 
+    <% if ENV["FORCE_HTTPS"] %>
+      if ($http_x_forwarded_proto != "https") {
+        return 301 https://$host$request_uri;
+      }
 
+      # add Strict-Transport-Security to prevent man in the middle attacks
+      add_header Strict-Transport-Security "max-age=31536000";
+    <% end %>
 
     # shut down unused methods
     if ($request_method !~ ^(GET|HEAD|POST)$ ) {
@@ -182,6 +189,30 @@ http {
 
       alias $phuDir;
     }
+
+    <% if ENV["ICON_SERVER"] %>
+      location /api/ {
+
+        if ($validPhu = 0){
+          return 404;
+        }
+
+		add_header Cache-Control "no-store";
+
+        proxy_pass <%= ENV["ICON_SERVER"] %>/api/;
+
+        # Require for logging
+        proxy_ssl_server_name on;
+        proxy_set_header hostname     $host;
+        proxy_set_header http-referer $http_referer;
+      }
+    <% end %>
+
+  <% unless File.exists?(File.join(ENV["APP_ROOT"], "nginx/conf/.enable_dotfiles")) %>
+    location ~ /\. {
+      deny all;
+      return 404;
+    }
+  <% end %>
   }
 }
-
