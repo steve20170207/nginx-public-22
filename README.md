@@ -3,6 +3,7 @@ ICON v2 Front-End
 
 This README describes how to build the ICON v2 front-end application for development, testing, and deployment purposes.
 
+This release or feature branch is target on deploy to Heroku PaSS platform utilize build pack and nginx. 
 
 Bundling the App for Production
 -------------------------------
